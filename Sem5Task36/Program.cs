@@ -30,7 +30,6 @@ void PrintData(int res)
 {
     Console.WriteLine(res);
 }
-
 //подсчёт сумммы  не чётных чисел в массиве
 int SamOdd(int[] arr)
 {
