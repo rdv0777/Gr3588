@@ -36,6 +36,7 @@ void Print2DArray(double[,] matrix)
     }
 }
 
+
 int row = ReadData("Введите колличество строк ");
 int column = ReadData("Введите колличество столбцов ");
 double[,] arr2D = Fill2DArray(row, column, 10, 99);
