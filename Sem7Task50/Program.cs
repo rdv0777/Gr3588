@@ -34,12 +34,12 @@ void Print2DArray(int[,] matrix)
     }
 }
 //Метод поиска элементов
-int SearchElem(int[,] arr,  int x,  int y)
-{   
+int SearchElem(int[,] arr, int x, int y)
+{
     int elem = -1;
-    if ( x < arr.GetLength(0))
+    if (x < arr.GetLength(0))
     {
-        if ( y < arr.GetLength(1))
+        if (y < arr.GetLength(1))
         {
             elem = arr[x, y];
         }
@@ -51,11 +51,12 @@ void PrintData(int res)
 {
     Console.WriteLine(res);
 }
+
 int row = ReadData("Введите колличество строк ");
 int column = ReadData("Введите колличество столбцов ");
 int x = ReadData("Введите x ");
 int y = ReadData("Введите y ");
 int[,] arr2D = Fill2DArray(row, column, 10, 99);
 Print2DArray(arr2D);
-int res = SearchElem (arr2D,x,y);
+int res = SearchElem(arr2D, x, y);
 PrintData(res);
