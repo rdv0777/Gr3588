@@ -34,33 +34,33 @@ void Print2DArray(int[,] matrix)
     }
 }
 //Метод нахождения среднеарефметического в столбце
-int[] AwgCol(int[,]arr)
+int[] AwgCol(int[,] arr)
 {
-    int[]awr = new int[arr.GetLength(1)];
-    for(int j=0;j<arr.GetLength(1);j++)
+    int[] awr = new int[arr.GetLength(1)];
+    for (int j = 0; j < arr.GetLength(1); j++)
     {
-        for(int i=0;i<arr.GetLength(0);i++)
+        for (int i = 0; i < arr.GetLength(0); i++)
         {
-            awr[j]+= arr[i,j]; 
-        }   
-         awr[j]= awr[j]/arr.GetLength(0); 
-    }  
-    
+            awr[j] += arr[i, j];
+        }
+        awr[j] = awr[j] / arr.GetLength(0);
+    }
+
     return awr;
 }
 // выводим сгенерированный массив
-void Print1DArr (int[] arr)
+void Print1DArr(int[] arr)
 {
-    for (int i=0; i<arr.Length-1; i++)
+    for (int i = 0; i < arr.Length - 1; i++)
     {
-        Console.Write(arr[i] + "  "  );
+        Console.Write(arr[i] + "  ");
     }
-    Console.WriteLine(arr[arr.Length-1]);
+    Console.WriteLine(arr[arr.Length - 1]);
 }
 
 int row = ReadData("Введите колличество строк ");
 int column = ReadData("Введите колличество столбцов ");
 int[,] arr2D = Fill2DArray(row, column, 10, 99);
- Print2DArray(arr2D);
-int []res=AwgCol(arr2D);
+Print2DArray(arr2D);
+int[] res = AwgCol(arr2D);
 Print1DArr(res);
