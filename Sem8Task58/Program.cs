@@ -14,7 +14,7 @@ Print2DArrayColor(arr2D2);
 
 int[,]  resultMatrix = new int[a,c];
 
-MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
+MultiplyMatrix(arr2D, arr2D2, resultMatrix);
 Console.WriteLine("Произведение первой и второй матриц:");
 Print2DArrayColor(resultMatrix);
 
@@ -70,7 +70,7 @@ ConsoleColor.Yellow};
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             Console.ForegroundColor = col[matrix[i, j] % 15];
-            Console.Write(matrix[i, j] + "     ".Substring(matrix[i, j].ToString().Length));
+            Console.Write(matrix[i, j] + "       ".Substring(matrix[i, j].ToString().Length));
             Console.ResetColor();
         }
         Console.WriteLine();

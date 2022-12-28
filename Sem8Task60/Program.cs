@@ -2,20 +2,22 @@
 int row = ReadData("Введите количество строк");
 int column = ReadData("Введите количество столбцов");
 int page = ReadData("Введите количество страниц");
-int[,,] arr3D = Fill3DArray(row, column,page, 10, 99);
-Print3DArrayColor(arr3D);
 
 List<int> num=new List<int>();
 for(int i=0;i<99;i++)
 {
-    num.add(10+i);
+    num.Add(10+i);
 }
+
+int[,,] arr3D = Fill3DArray(row, column, page, num);
+Print3DArrayColor(arr3D);
 
 int GenNum(List<int>num)
 {
     int index=new Random().Next(0,num.Count);
     int outNum=num[index];
     num.RemoveAt(index);
+    return outNum;
 }
 // Метод вывода данных
 int ReadData(string line)
@@ -25,9 +27,8 @@ int ReadData(string line)
     return number;
 }
 //Универсальный метод генерации и заполнения двумерного массива
-int[,,] Fill3DArray(int countRow, int countColumn, int countPage,int topBorder, int downBorder)
+int[,,] Fill3DArray(int countRow, int countColumn, int countPage,  List<int> num)
 {
-     GenNum rand = new  GenNum();
     int[,,] array3D = new int[countRow, countColumn, countPage];
 
     for (int i = 0; i < countRow; i++)
@@ -36,7 +37,7 @@ int[,,] Fill3DArray(int countRow, int countColumn, int countPage,int topBorder, 
         {
             for (int k = 0; k < countPage; k++)
             {
-            array3D[i, j, k] = rand.Next(topBorder, downBorder + 1);
+                array3D[i, j, k] = GenNum(num);
             }
         }
     }
